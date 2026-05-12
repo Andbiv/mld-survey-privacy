@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — MLD Survey</title>
+<style>
+  :root {
+    --text: #1f2328;
+    --muted: #57606a;
+    --accent: #0969da;
+    --bg: #ffffff;
+    --rule: #d0d7de;
+    --card: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #4493f8;
+      --bg: #0d1117;
+      --rule: #30363d;
+      --card: #161b22;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 8px;
+    line-height: 1.25;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h3 {
+    font-size: 1.05rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+  p { margin: 0.75rem 0; }
+  ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  li { margin: 0.25rem 0; }
+  .tagline {
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 1rem 0;
+  }
+  .contact-card p { margin: 0.25rem 0; }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--muted); text-decoration: underline; }
+</style>
+</head>
+<body>
+<main>
+  <h1>MLD Survey Support</h1>
+  <p class="tagline">Help and contact information for the MLD Survey wildlife observation app.</p>
+
+  <h2>About MLD Survey</h2>
+  <p>MLD Survey is an iPad-optimized application for recording wildlife observations in the field. Tap a species button to log an observation with a GPS-tagged timestamp, organize observations into surveys, and export the results as CSV or KML.</p>
+
+  <h2>Contact Support</h2>
+  <div class="contact-card">
+    <p><strong>Email:</strong> <a href="mailto:andrew@bivins.org">andrew@bivins.org</a></p>
+    <p>For bug reports, feature requests, or general questions, please include your iPad model, iOS version, and a brief description of the issue.</p>
+  </div>
+
+  <h2>Getting Started</h2>
+  <ol>
+    <li>Open MLD Survey and grant location permission when prompted — GPS is required to tag observations.</li>
+    <li>Create a new survey from the Survey Management screen, or use the active survey.</li>
+    <li>Tap a species button on the main screen to record an observation at your current GPS location.</li>
+    <li>Use the minus button on a species to remove the most recent observation if needed.</li>
+    <li>When finished, export the survey to CSV (data) or KML (mapping) from the Survey Management screen.</li>
+  </ol>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>The GPS indicator is red or yellow — what does that mean?</h3>
+  <p>The GPS status indicator reflects current location accuracy. Red indicates poor or no GPS signal, yellow indicates moderate accuracy, and green indicates good accuracy. Move to an area with a clearer sky view if your indicator is not green, and wait a few seconds for the signal to stabilize before recording observations.</p>
+
+  <h3>Why aren't my taps registering?</h3>
+  <p>MLD Survey has an auto-lock feature to prevent accidental button presses in the field. If the screen is locked, double-tap to unlock. The auto-lock timeout can be configured (Disabled, 30s, 60s, 90s, or 120s) in the app settings.</p>
+
+  <h3>How do I add custom species?</h3>
+  <p>Open the Species Management screen to add, edit, or reorder species. You can also create named species lists in Species List Management and assign a list to each survey, so different surveys only show the species you need.</p>
+
+  <h3>How do I export my data?</h3>
+  <p>From Survey Management, select a survey and choose Export. CSV exports include all observation records with species, timestamp, and GPS coordinates. KML exports open in Google Earth and other mapping tools to visualize observation locations.</p>
+
+  <h3>Can I use MLD Survey without GPS or internet?</h3>
+  <p>MLD Survey works fully offline once installed — no internet connection is required. GPS is required only if you want to geotag observations; the app uses the iPad's built-in location services.</p>
+
+  <h3>Where is my data stored?</h3>
+  <p>All survey data is stored locally on your device. Data only leaves the device when you choose to export or share it. See the <a href="index.html">Privacy Policy</a> for details.</p>
+
+  <h2>System Requirements</h2>
+  <ul>
+    <li>iPad running iPadOS 15 or later</li>
+    <li>Location services enabled (for GPS tagging)</li>
+    <li>iPad with built-in GPS recommended for field use</li>
+  </ul>
+
+  <h2>Reporting a Bug</h2>
+  <p>If you encounter a bug or unexpected behavior, please email <a href="mailto:andrew@bivins.org">andrew@bivins.org</a> with:</p>
+  <ul>
+    <li>A description of what happened and what you expected</li>
+    <li>Steps to reproduce the issue</li>
+    <li>Your iPad model and iPadOS version</li>
+    <li>The app version (shown in the app's settings or About screen)</li>
+  </ul>
+
+  <footer>
+    &copy; 2026 MLD Survey &middot; <a href="index.html">Privacy Policy</a>
+  </footer>
+</main>
+</body>
+</html>
