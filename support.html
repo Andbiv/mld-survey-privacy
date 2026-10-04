@@ -86,60 +86,77 @@
 <body>
 <main>
   <h1>MLD Survey Support</h1>
-  <p class="tagline">Help and contact information for the MLD Survey wildlife observation app.</p>
+  <p class="tagline">Help and contact information for the MLD Survey wildlife count app, for iPhone and iPad.</p>
 
   <h2>About MLD Survey</h2>
-  <p>MLD Survey is an iPad-optimized application for recording wildlife observations in the field. Tap a species button to log an observation with a GPS-tagged timestamp, organize observations into surveys, and export the results as CSV or KML.</p>
+  <p>MLD Survey is a field tool for counting wildlife from a truck or the air. Tap a species button once for each animal you see, and the app records the species, the time, and your GPS position. While you count, it also records the route you cover. Afterwards you can review each survey with a map, totals, and animals per mile, and export it as spreadsheets (CSV) and map files (KML). It works fully offline, needs no account, and keeps your data on your device.</p>
 
   <h2>Contact Support</h2>
   <div class="contact-card">
     <p><strong>Email:</strong> <a href="mailto:andrew@bivins.org">andrew@bivins.org</a></p>
-    <p>For bug reports, feature requests, or general questions, please include your iPad model, iOS version, and a brief description of the issue.</p>
+    <p>For bug reports, feature requests, or general questions, please include your device model (iPhone or iPad), its iOS or iPadOS version, and a short description of the issue.</p>
   </div>
 
   <h2>Getting Started</h2>
   <ol>
-    <li>Open MLD Survey and grant location permission when prompted — GPS is required to tag observations.</li>
-    <li>Create a new survey from the Survey Management screen, or use the active survey.</li>
-    <li>Tap a species button on the main screen to record an observation at your current GPS location.</li>
-    <li>Use the minus button on a species to remove the most recent observation if needed.</li>
-    <li>When finished, export the survey to CSV (data) or KML (mapping) from the Survey Management screen.</li>
+    <li>On the Home screen, tap <strong>NEW SURVEY</strong>. Choose a ranch, name the survey, set the date, choose a species list, and tap <strong>START COLLECTING</strong>.</li>
+    <li>Allow location access when asked (&ldquo;While Using the App&rdquo;). The app uses it to place each animal and to record your route.</li>
+    <li>Tap a species button for each animal you see. Each tap is saved immediately with the time and your position.</li>
+    <li>Tapped the wrong one? Tap the <strong>minus</strong> on that species to remove its most recent count. An <strong>UNDO</strong> / <strong>MOVE TO&hellip;</strong> bar appears for a few seconds, so you can put it back or move it to the right species.</li>
+    <li>Use <strong>&#9208; Pause</strong> for breaks such as fuel stops. Pausing also pauses the route. Tap <strong>TAP TO RESUME</strong> to carry on.</li>
+    <li>When you&rsquo;re done, tap <strong>END SURVEY (SAVE &amp; FINISH)</strong>. A ZIP of the survey&rsquo;s files is saved automatically in the Files app (see below).</li>
+    <li>Open <strong>Review &amp; Export Surveys</strong> from Home to see each survey&rsquo;s map, totals and effort, and to export or share it.</li>
   </ol>
 
   <h2>Frequently Asked Questions</h2>
 
-  <h3>The GPS indicator is red or yellow — what does that mean?</h3>
-  <p>The GPS status indicator reflects current location accuracy. Red indicates poor or no GPS signal, yellow indicates moderate accuracy, and green indicates good accuracy. Move to an area with a clearer sky view if your indicator is not green, and wait a few seconds for the signal to stabilize before recording observations.</p>
+  <h3>What do the GPS indicator colours mean?</h3>
+  <p>The indicator on the count screen shows how accurate your position is right now. <strong>Green</strong> means within about 20 metres, <strong>orange</strong> means within about 50 metres, and <strong>red</strong> means worse than that, no signal yet, or location access turned off. If it isn&rsquo;t green, give it a few seconds with a clear view of the sky. Taps are always saved, even when the GPS is red. They use the latest position the device has, or are saved without a position if there is none.</p>
 
-  <h3>Why aren't my taps registering?</h3>
-  <p>MLD Survey has an auto-lock feature to prevent accidental button presses in the field. If the screen is locked, double-tap to unlock. The auto-lock timeout can be configured (Disabled, 30s, 60s, 90s, or 120s) in the app settings.</p>
+  <h3>Why aren&rsquo;t my taps registering?</h3>
+  <p>The count screen locks itself after a period of no taps, so a bumped screen in a vehicle or aircraft can&rsquo;t add stray counts. When it&rsquo;s locked, tap the big button twice to unlock. To change the timer, tap the lock button (&#128274;) on the count screen and choose Disabled, 20 seconds, 30 seconds, 60 seconds, or 2 minutes (the default). If the screen says <strong>SURVEY PAUSED</strong>, tap it to resume.</p>
 
-  <h3>How do I add custom species?</h3>
-  <p>Open the Species Management screen to add, edit, or reorder species. You can also create named species lists in Species List Management and assign a list to each survey, so different surveys only show the species you need.</p>
+  <h3>Does the route keep recording with the screen off?</h3>
+  <p>Yes. While a survey is active and not paused, the route keeps recording with the screen off or another app open, so there are no gaps. iOS shows the location indicator in the status bar while this is happening. Pausing or ending the survey stops it.</p>
+
+  <h3>How do I add my own species or ranches?</h3>
+  <p>From Home, open <strong>Manage Species</strong> to add, rename, recolour or reorder species, and to build named species lists, so each survey shows only the buttons you need. Open <strong>Manage Ranches</strong> to add the ranches you survey. The ranch name is used to label surveys and name exported files.</p>
+
+  <h3>How do I set up a second device the same way?</h3>
+  <p>On the device that&rsquo;s already set up, tap <strong>Share Setup &rarr; Show QR Code</strong> on Home. On the new device, tap <strong>Import Setup &rarr; Scan QR Code</strong> and point the camera at it. This copies species and species lists only. Surveys and counts are not included.</p>
 
   <h3>How do I export my data?</h3>
-  <p>From Survey Management, select a survey and choose Export. CSV exports include all observation records with species, timestamp, and GPS coordinates. KML exports open in Google Earth and other mapping tools to visualize observation locations.</p>
+  <p>Open <strong>Review &amp; Export Surveys</strong> and tap <strong>Export</strong> on a survey, or select several and tap <strong>Export Selected</strong>. You get a ZIP containing a summary, CSV spreadsheets of every observation (species, time, coordinates), KML map files of the observations and the route (these open in Google Earth and most GIS software), survey effort, and weather when it&rsquo;s available. The iOS share sheet then lets you email it, AirDrop it, or save it to Files.</p>
 
-  <h3>Can I use MLD Survey without GPS or internet?</h3>
-  <p>MLD Survey works fully offline once installed — no internet connection is required. GPS is required only if you want to geotag observations; the app uses the iPad's built-in location services.</p>
+  <h3>Where does the end-of-survey ZIP go?</h3>
+  <p>Open the Files app and go to <strong>On My iPad</strong> (or <strong>On My iPhone</strong>) &rarr; <strong>MLD Survey</strong> &rarr; <strong>Exports</strong>. You can AirDrop or copy the file from there later without opening the app. It&rsquo;s still on the same device, though, so it is not a backup.</p>
+
+  <h3>How do I back up my surveys?</h3>
+  <p>In <strong>Review &amp; Export Surveys</strong>, tap <strong>Export All Surveys (Backup)</strong> and save the file somewhere off the device, such as email, a computer, or cloud storage. Do this regularly. Deleting the app deletes its data, including the Exports folder.</p>
+
+  <h3>Can I use MLD Survey without internet?</h3>
+  <p>Yes. Everything works offline, including counting, route recording, review and export. GPS works without cell signal. Two things use the internet only when it&rsquo;s available: weather conditions for a survey (from the U.S. National Weather Service), and the background imagery on the map screen (Apple Maps). Without signal, your counts and route are still recorded and saved, and weather is fetched again when you export with a connection.</p>
+
+  <h3>Why is there no weather in my export?</h3>
+  <p>The weather service only provides about the last 7 days of station readings. If the device had no signal when the survey started or ended, and the survey is exported more than about a week later, there is no weather to include. Exporting within a few days of flying, with a connection, avoids this.</p>
 
   <h3>Where is my data stored?</h3>
-  <p>All survey data is stored locally on your device. Data only leaves the device when you choose to export or share it. See the <a href="index.html">Privacy Policy</a> for details.</p>
+  <p>Only on your device. There is no account and no server, and survey data leaves the device only when you export or share it. The <a href="index.html">Privacy Policy</a> explains exactly what is stored, why, and when anything is sent.</p>
 
   <h2>System Requirements</h2>
   <ul>
-    <li>iPad running iPadOS 15 or later</li>
-    <li>Location services enabled (for GPS tagging)</li>
-    <li>iPad with built-in GPS recommended for field use</li>
+    <li>iPhone or iPad running iOS / iPadOS 15.1 or later</li>
+    <li>Location Services enabled for MLD Survey (for positions and the survey route)</li>
+    <li>A device with built-in GPS is recommended for field use. Wi-Fi-only iPads have no GPS chip, so pair them with an external GPS receiver or use a cellular model.</li>
   </ul>
 
   <h2>Reporting a Bug</h2>
-  <p>If you encounter a bug or unexpected behavior, please email <a href="mailto:andrew@bivins.org">andrew@bivins.org</a> with:</p>
+  <p>If something goes wrong, please email <a href="mailto:andrew@bivins.org">andrew@bivins.org</a> with:</p>
   <ul>
-    <li>A description of what happened and what you expected</li>
-    <li>Steps to reproduce the issue</li>
-    <li>Your iPad model and iPadOS version</li>
-    <li>The app version (shown in the app's settings or About screen)</li>
+    <li>What happened, and what you expected to happen</li>
+    <li>The steps that lead to it, if you can repeat it</li>
+    <li>Your device model and its iOS / iPadOS version</li>
+    <li>The app version (Settings &rarr; General &rarr; iPhone/iPad Storage &rarr; MLD Survey, or the app&rsquo;s App Store page)</li>
   </ul>
 
   <footer>
