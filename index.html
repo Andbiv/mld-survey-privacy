@@ -65,6 +65,16 @@
     color: var(--muted);
     font-size: 0.85rem;
   }
+  .summary {
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 4px 20px;
+    margin: 1.5rem 0;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+  th { color: var(--muted); font-weight: 600; }
+  @media (max-width: 520px) { th, td { padding: 6px 4px; } }
 </style>
 </head>
 <body>
@@ -72,67 +82,97 @@
   <h1>Privacy Policy for MLD Survey</h1>
   <p class="effective-date">Effective Date: May 11, 2026 &middot; Last Updated: October 4, 2026</p>
 
-  <p>MLD Survey is a wildlife survey application used to record and manage animal observations and related field data.</p>
+  <p>MLD Survey is a field tool for counting wildlife. You tap a species button for each animal you see, and the app records where and when you saw it, and the route you covered. This page explains exactly what the app stores, why it needs it, and when anything leaves your device. It is written to be read, not skimmed past.</p>
 
-  <h2>Information We Collect</h2>
-  <p>MLD Survey may collect the following categories of information:</p>
+  <div class="summary">
+    <p><strong>The short version</strong></p>
+    <ul>
+      <li>Your survey data lives <strong>only on your device</strong>. There is no account, no sign-in, and no MLD Survey server. I (the developer) cannot see your surveys.</li>
+      <li>Your survey data leaves the device <strong>only when you export or share it yourself</strong>, or when your own device backup includes it.</li>
+      <li>Location is recorded <strong>only while a survey is active</strong>, and the app asks only for &ldquo;While Using the App&rdquo; permission.</li>
+      <li>The app contains <strong>no advertising, no analytics, and no tracking code</strong>. Nothing is sold or shared for marketing.</li>
+      <li>Two features use the internet: <strong>weather</strong> (from the U.S. National Weather Service) and <strong>maps</strong> (Apple Maps). Both are explained below.</li>
+    </ul>
+  </div>
+
+  <h2>What the App Stores, and Why</h2>
+  <p>Everything below is stored in a database inside the app, on your device. It is used only to run the app and to build the files you choose to export.</p>
+  <table>
+    <thead>
+      <tr><th>What</th><th>Why the app needs it</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Observations</strong>: the species, the time you tapped, and the GPS position and its accuracy</td><td>This is the count itself. Each tap is one animal at one place and time, so it can be mapped and totalled.</td></tr>
+      <tr><td><strong>Survey route</strong>: GPS points along the path you travel during a survey</td><td>Shows the area you actually covered. It is used to draw the route on the map, to measure miles flown or driven, and to work out survey effort (animals seen per mile).</td></tr>
+      <tr><td><strong>Survey details</strong>: survey name, ranch name, start and end times, notes</td><td>Labels your surveys so you can tell them apart and name the exported files.</td></tr>
+      <tr><td><strong>Crew and aircraft</strong>: names you type for the pilot and observers, which seat each sat in, and the aircraft</td><td>Records who counted which side, because that affects the counts. Names you have used before are remembered on this device so you don&rsquo;t have to retype them. These fields are optional.</td></tr>
+      <tr><td><strong>Weather</strong>: temperature, wind and sky conditions near the survey</td><td>Survey conditions affect how many animals are seen, so they are saved with the survey. See &ldquo;Weather&rdquo; below.</td></tr>
+      <tr><td><strong>Species and species lists</strong> you set up</td><td>Builds the buttons you tap.</td></tr>
+      <tr><td><strong>App settings</strong>, such as the auto-lock timer</td><td>Remembers how you like the app set up.</td></tr>
+    </tbody>
+  </table>
+  <p>The app does not collect your name, email address, phone number, contacts, photos, or any advertising identifier. Crew names are only what you type in, and they stay on the device unless you export a survey.</p>
+
+  <h2>Location</h2>
+  <p><strong>Why:</strong> a wildlife count is only useful if you know where each animal was seen and what ground was covered. That is the only reason the app uses location.</p>
+  <p><strong>When:</strong> location is recorded only while a survey is active.</p>
   <ul>
-    <li>Wildlife survey records entered by the user</li>
-    <li>Date and time of observations</li>
-    <li>Precise GPS location associated with observations</li>
-    <li>App usage and interaction information</li>
-    <li>Diagnostic information</li>
-    <li>Crash reports</li>
-    <li>Performance data</li>
+    <li>When you tap a species button, that observation is stamped with your current position.</li>
+    <li>When you open a survey to start counting, the app begins recording your route. Pausing the survey pauses the route, and ending the survey stops it. When no survey is active, the app records no location at all.</li>
+    <li>Surveys often run for hours from a vehicle or aircraft, with the screen off between sightings. While a survey is active, the route keeps recording even if the screen is off or you switch to another app, so the route doesn&rsquo;t have gaps. iOS shows the location indicator in the status bar whenever this is happening, so you can always tell.</li>
+    <li>To save storage, the route keeps at most about one point every few seconds, and drops readings that are less accurate than about 100 metres.</li>
   </ul>
-  <p>This information is not linked to your identity.</p>
-  <p>No user account is required to use MLD Survey.</p>
+  <p><strong>Permission:</strong> the app asks only for &ldquo;While Using the App&rdquo; location access. It never asks for &ldquo;Always&rdquo;. You can turn location off at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Location Services &rarr; MLD Survey. Observations will then be saved without a position.</p>
 
-  <h2>How Information Is Used</h2>
-  <p>Information collected by MLD Survey is used to:</p>
+  <h2>Camera</h2>
+  <p>The camera is used only to scan a &ldquo;Share Setup&rdquo; QR code from another device running MLD Survey. The code holds species names, colours and species lists, and nothing else. No photo or video is taken or saved. The camera is used only while the scanner screen is open, and only if you allow it.</p>
+
+  <h2>When Data Leaves Your Device</h2>
+  <p><strong>Your survey data</strong> leaves the device only in these cases, all started by you:</p>
   <ul>
-    <li>Record and organize wildlife survey observations</li>
-    <li>Improve app functionality and reliability</li>
-    <li>Diagnose crashes and performance issues</li>
-    <li>Support app features that rely on device positioning or location services</li>
+    <li><strong>Exporting or sharing a survey.</strong> The app builds files (CSV spreadsheets, KML map files, and a summary, packed in a ZIP) and opens the iOS share sheet. You choose where they go: Mail, Messages, AirDrop, Files, or another app. Once you send them, they are handled by whichever app or person you sent them to.</li>
+    <li><strong>Saving at the end of a survey.</strong> When you finish a survey, a copy of its export ZIP is saved in the Files app under On My iPad (or On My iPhone) &rarr; MLD Survey &rarr; Exports. It stays on the device. It only goes anywhere if you move or share it.</li>
+    <li><strong>Your own device backups.</strong> If you back up your device with iCloud Backup or a computer, the app&rsquo;s data is included in that backup, as with any app. That backup belongs to your Apple account, not to MLD Survey.</li>
+    <li><strong>Showing a Share Setup QR code.</strong> The code on screen contains only your species and species lists, never observations, locations, or names.</li>
   </ul>
 
-  <h2>Location Information</h2>
-  <p>MLD Survey uses precise location data to geotag wildlife observations and to record the route you travel during a survey.</p>
-  <p>Location access is used solely for geotagging wildlife observations, recording the survey route, and related survey functionality.</p>
-  <p>Route recording starts when you start a survey and stops when you pause or end it. While a survey is active, the route keeps recording even if the screen is off or the app is in the background, and iOS shows the location indicator while it does. No location is recorded when no survey is active.</p>
-  <p>The app asks only for &ldquo;While Using the App&rdquo; location permission, and location access can be disabled at any time through iOS Settings.</p>
-
-  <h2>Data Sharing</h2>
-  <p>We do not sell personal information.</p>
-  <p>We do not use collected data for advertising, profiling, or data brokerage purposes.</p>
-  <p>Information collected by the app is not linked to your identity and is not used for advertising or marketing purposes.</p>
-
-  <h2>Data Storage</h2>
-  <p>Survey records, including observation locations and survey routes, are stored only on your device. MLD Survey has no user accounts and no server of its own, and your survey data is never uploaded to us.</p>
-  <p>Your survey data leaves the device only when you choose to export or share it (for example, sending a CSV, KML, or ZIP file through the iOS share sheet), or when it is included in your own device backups.</p>
-  <p>Two features contact outside services while you use the app:</p>
+  <p><strong>Two features connect to outside services</strong> while you use the app:</p>
   <ul>
-    <li><strong>Weather.</strong> To record weather conditions for a survey, the app sends the survey&rsquo;s approximate location and time to the U.S. National Weather Service&rsquo;s public weather service (api.weather.gov) when a survey starts, ends, or is exported, if an internet connection is available. No name, account, or device identifier is sent with this request.</li>
-    <li><strong>Maps.</strong> The map view uses Apple Maps, which loads map imagery from Apple for the area being viewed. Apple handles this under its own privacy policy.</li>
+    <li><strong>Weather.</strong> When a survey starts, when it ends, and when you export it, the app asks the U.S. National Weather Service&rsquo;s free public weather service (<a href="https://www.weather.gov/">api.weather.gov</a>) for conditions at the nearest weather station. To find that station, the request includes the survey&rsquo;s location (to within about 10 metres) and the survey&rsquo;s time window. No name, account, crew name, observation or device identifier is sent. As with any internet request, the weather service can see your network&rsquo;s IP address. If there is no internet connection, as is common in the field, the request is simply skipped, and the survey is still saved without weather.</li>
+    <li><strong>Maps.</strong> The map screen uses Apple Maps, which downloads map and satellite imagery from Apple for the area on screen. Apple handles this under <a href="https://www.apple.com/legal/privacy/">its own privacy policy</a>. Your observations and route are drawn on top of the map on your device. They are not sent to Apple.</li>
+  </ul>
+  <p>No other internet connections are made by the app.</p>
+
+  <h2>What MLD Survey Does Not Do</h2>
+  <ul>
+    <li>It does not require or offer an account or sign-in.</li>
+    <li>It does not send your surveys, locations, or crew names to the developer or to any server.</li>
+    <li>It contains no advertising, analytics, or third-party tracking code.</li>
+    <li>It does not sell, rent, or share your information for advertising, marketing, profiling, or data brokerage.</li>
+    <li>It does not track you across other apps or websites.</li>
   </ul>
 
-  <h2>User Controls</h2>
-  <p>Users may:</p>
+  <h2>Crash Reports from Apple</h2>
+  <p>If you have chosen in iOS Settings (Privacy &amp; Security &rarr; Analytics &amp; Improvements) to share analytics with app developers, Apple may send me anonymous crash reports and basic usage and performance statistics for the app. These are collected by Apple, not by MLD Survey. They do not include your survey data, and they are not linked to your identity. They are used only to find and fix bugs. You can turn this sharing off at any time in the same Settings screen.</p>
+
+  <h2>Your Controls</h2>
   <ul>
-    <li>Disable location access through iOS Settings</li>
-    <li>Delete app data by removing the application from the device</li>
-    <li>Control app permissions through iOS privacy settings</li>
+    <li><strong>Pause or end a survey</strong> to stop route recording immediately.</li>
+    <li><strong>Turn off location or camera access</strong> at any time in iOS Settings.</li>
+    <li><strong>Delete a survey</strong> in the app to remove its observations and route from the device.</li>
+    <li><strong>Delete exported files</strong> from Files &rarr; MLD Survey &rarr; Exports.</li>
+    <li><strong>Delete the app</strong> to remove all of its data from the device.</li>
   </ul>
+  <p>Because your data is never sent to me, there is nothing held on a server for me to look up, hand over, or delete. Files you have exported and sent to other people or apps are outside the app&rsquo;s control.</p>
 
   <h2>Children&rsquo;s Privacy</h2>
-  <p>MLD Survey is not directed toward children under the age of 13.</p>
+  <p>MLD Survey is not directed toward children under the age of 13, and it does not knowingly collect information from them.</p>
 
   <h2>Changes to This Policy</h2>
-  <p>This Privacy Policy may be updated periodically. Continued use of the app after updates constitutes acceptance of the revised policy.</p>
+  <p>If the app ever changes how it uses data, this page will be updated first and the &ldquo;Last Updated&rdquo; date above will change. Continued use of the app after an update means you accept the revised policy.</p>
 
   <h2>Contact</h2>
-  <p>For questions regarding this Privacy Policy, contact:</p>
+  <p>Questions about privacy or about this policy are welcome:</p>
   <p><a href="mailto:andrew@bivins.org">andrew@bivins.org</a></p>
 
   <footer>
