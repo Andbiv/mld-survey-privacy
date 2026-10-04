@@ -88,8 +88,8 @@
     <p><strong>The short version</strong></p>
     <ul>
       <li>Your survey data lives <strong>only on your device</strong>. There is no account, no sign-in, and no MLD Survey server. I (the developer) cannot see your surveys.</li>
-      <li>Your survey data leaves the device <strong>only when you export or share it yourself</strong>, or when your own device backup includes it.</li>
-      <li>Location is recorded <strong>only while a survey is active</strong>, and the app asks only for &ldquo;While Using the App&rdquo; permission.</li>
+      <li>Your survey records leave the device as files <strong>only when you export or share them yourself</strong>, or in your own device backups. The one automatic exception is a weather lookup, explained below.</li>
+      <li>Your route is recorded <strong>only while a survey is active</strong>. The app asks only for &ldquo;While Using the App&rdquo; location permission, never &ldquo;Always&rdquo;.</li>
       <li>The app contains <strong>no advertising, no analytics, and no tracking code</strong>. Nothing is sold or shared for marketing.</li>
       <li>Two features use the internet: <strong>weather</strong> (from the U.S. National Weather Service) and <strong>maps</strong> (Apple Maps). Both are explained below.</li>
     </ul>
@@ -115,17 +115,18 @@
 
   <h2>Location</h2>
   <p><strong>Why:</strong> a wildlife count is only useful if you know where each animal was seen and what ground was covered. That is the only reason the app uses location.</p>
-  <p><strong>When:</strong> location is recorded only while a survey is active.</p>
+  <p><strong>When:</strong> positions are saved only while you are counting a survey.</p>
   <ul>
     <li>When you tap a species button, that observation is stamped with your current position.</li>
-    <li>When you open a survey to start counting, the app begins recording your route. Pausing the survey pauses the route, and ending the survey stops it. When no survey is active, the app records no location at all.</li>
-    <li>Surveys often run for hours from a vehicle or aircraft, with the screen off between sightings. While a survey is active, the route keeps recording even if the screen is off or you switch to another app, so the route doesn&rsquo;t have gaps. iOS shows the location indicator in the status bar whenever this is happening, so you can always tell.</li>
+    <li>When you open a survey to start counting, the app begins recording your route. Pausing the survey stops saving route points, and ending the survey stops route recording. When no survey is active, no route is recorded.</li>
+    <li>While the count screen is open, the app reads your position continuously to show the GPS indicator and to stamp your taps, including while a survey is paused. When you open a map, it shows your current position (the blue dot), which uses location while the map is on screen. These live readings are not saved.</li>
+    <li>Surveys often run for hours from a vehicle or aircraft, with the screen off between sightings. While a survey is active, the route keeps recording even if the screen is off or you switch to another app. iOS shows the location indicator in the status bar whenever this is happening, so you can always tell. If iOS closes the app completely, recording stops, and it resumes the next time you open the app during that survey.</li>
     <li>To save storage, the route keeps at most about one point every few seconds, and drops readings that are less accurate than about 100 metres.</li>
   </ul>
   <p><strong>Permission:</strong> the app asks only for &ldquo;While Using the App&rdquo; location access. It never asks for &ldquo;Always&rdquo;. You can turn location off at any time in iOS Settings &rarr; Privacy &amp; Security &rarr; Location Services &rarr; MLD Survey. Observations will then be saved without a position.</p>
 
   <h2>Camera</h2>
-  <p>The camera is used only to scan a &ldquo;Share Setup&rdquo; QR code from another device running MLD Survey. The code holds species names, colours and species lists, and nothing else. No photo or video is taken or saved. The camera is used only while the scanner screen is open, and only if you allow it.</p>
+  <p>The camera is used only to scan a &ldquo;Share Setup&rdquo; QR code from another device running MLD Survey. The code holds species names and colours, and your species lists (their names, any descriptions you typed, and which species they include), and nothing else. No photo or video is taken or saved. The camera is used only while the scanner screen is open, and only if you allow it.</p>
 
   <h2>When Data Leaves Your Device</h2>
   <p><strong>Your survey data</strong> leaves the device only in these cases, all started by you:</p>
@@ -133,12 +134,12 @@
     <li><strong>Exporting or sharing a survey.</strong> The app builds files (CSV spreadsheets, KML map files, and a summary, packed in a ZIP) and opens the iOS share sheet. You choose where they go: Mail, Messages, AirDrop, Files, or another app. Once you send them, they are handled by whichever app or person you sent them to.</li>
     <li><strong>Saving at the end of a survey.</strong> When you finish a survey, a copy of its export ZIP is saved in the Files app under On My iPad (or On My iPhone) &rarr; MLD Survey &rarr; Exports. It stays on the device. It only goes anywhere if you move or share it.</li>
     <li><strong>Your own device backups.</strong> If you back up your device with iCloud Backup or a computer, the app&rsquo;s data is included in that backup, as with any app. That backup belongs to your Apple account, not to MLD Survey.</li>
-    <li><strong>Showing a Share Setup QR code.</strong> The code on screen contains only your species and species lists, never observations, locations, or names.</li>
+    <li><strong>Showing a Share Setup QR code.</strong> The code on screen contains only your species and species lists (including any list descriptions you typed), never surveys, observations, locations, or crew names.</li>
   </ul>
 
   <p><strong>Two features connect to outside services</strong> while you use the app:</p>
   <ul>
-    <li><strong>Weather.</strong> When a survey starts, when it ends, and when you export it, the app asks the U.S. National Weather Service&rsquo;s free public weather service (<a href="https://www.weather.gov/">api.weather.gov</a>) for conditions at the nearest weather station. To find that station, the request includes the survey&rsquo;s location (to within about 10 metres) and the survey&rsquo;s time window. No name, account, crew name, observation or device identifier is sent. As with any internet request, the weather service can see your network&rsquo;s IP address. If there is no internet connection, as is common in the field, the request is simply skipped, and the survey is still saved without weather.</li>
+    <li><strong>Weather.</strong> When a survey starts, when it ends, when you open a survey&rsquo;s Summary, and when you export a survey, the app asks the U.S. National Weather Service&rsquo;s free public weather service (<a href="https://www.weather.gov/">api.weather.gov</a>) for conditions at the nearest weather station. This happens automatically. To find that station, one request includes a location (a point from the survey&rsquo;s route, or your device&rsquo;s most recent position when a survey starts or ends), rounded to four decimal places, which is about 11 metres. A second request asks that station for readings across the survey&rsquo;s time window, padded by an hour on each side. No user or crew names, account IDs, device IDs or observations are sent. As the weather service asks of every app, the requests carry a fixed header naming the app and the developer&rsquo;s support email address. That header is the same for everyone and does not identify you. The weather service receives your network&rsquo;s IP address and, under <a href="https://www.weather.gov/privacy">its own privacy policy</a>, may keep standard server logs of requests. If there is no internet connection, as is common in the field, the lookup is skipped and the survey is saved without weather. Weather is a best-effort extra: it is attempted when possible and is not guaranteed for every survey.</li>
     <li><strong>Maps.</strong> The map screen uses Apple Maps, which downloads map and satellite imagery from Apple for the area on screen. Apple handles this under <a href="https://www.apple.com/legal/privacy/">its own privacy policy</a>. Your observations and route are drawn on top of the map on your device. They are not sent to Apple.</li>
   </ul>
   <p>No other internet connections are made by the app.</p>
@@ -146,7 +147,7 @@
   <h2>What MLD Survey Does Not Do</h2>
   <ul>
     <li>It does not require or offer an account or sign-in.</li>
-    <li>It does not send your surveys, locations, or crew names to the developer or to any server.</li>
+    <li>It does not send your surveys, observations, routes, or crew names to the developer or to any MLD Survey server. The weather lookup above is the only automatic transfer of a location.</li>
     <li>It contains no advertising, analytics, or third-party tracking code.</li>
     <li>It does not sell, rent, or share your information for advertising, marketing, profiling, or data brokerage.</li>
     <li>It does not track you across other apps or websites.</li>
@@ -157,9 +158,9 @@
 
   <h2>Your Controls</h2>
   <ul>
-    <li><strong>Pause or end a survey</strong> to stop route recording immediately.</li>
+    <li><strong>Pause or end a survey</strong> to stop saving route points immediately.</li>
     <li><strong>Turn off location or camera access</strong> at any time in iOS Settings.</li>
-    <li><strong>Delete a survey</strong> in the app to remove its observations and route from the device.</li>
+    <li><strong>Delete a survey</strong> in the app to remove it, its observations and its route from the app. ZIP files already created, including the automatic copy in Files &rarr; MLD Survey &rarr; Exports, stay until you delete them too, and copies in backups or other apps are not affected.</li>
     <li><strong>Delete exported files</strong> from Files &rarr; MLD Survey &rarr; Exports.</li>
     <li><strong>Delete the app</strong> to remove all of its data from the device.</li>
   </ul>
